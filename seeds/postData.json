@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Mastering HTML Forms",
+    "content": "HTML forms are essential for collecting user input on web pages. Learn how to create and customize forms using HTML elements such as input fields, buttons, and dropdown menus."
+  },
+  {
+    "title": "Introduction to ORM in Web Development",
+    "content": "ORM (Object-Relational Mapping) is a programming technique used to convert data between incompatible systems in object-oriented programming languages. Explore how ORM simplifies database interactions by abstracting the database layer and mapping objects to relational database tables."
+  },
+  {
+    "title": "Understanding MVC Architecture in Web Applications",
+    "content": "MVC (Model-View-Controller) is a software design pattern commonly used in web development to organize code into three interconnected components: Model, View, and Controller. Learn how MVC separates concerns, improves code maintainability, and enhances scalability in web applications."
+  }
+]
+

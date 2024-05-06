@@ -1,0 +1,63 @@
+<div class="row mt-4">
+    <div class="col-md-6">
+        <!-- Move the button outside of the form -->
+        <label for="toggle-new-post" class="btn btn-primary new-post-button">+ New Post</label>
+        <input type="checkbox" id="toggle-new-post" style="display: none;">
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <form class="form new-post-form" id="new-post-form">
+            <h3>Create a New Post</h3>
+            <div class="form-group">
+                <label for="post-title">Title</label>
+                <input class="form-input" type="text" id="post-title" name="post-title" />
+            </div>
+            <div class="form-group">
+                <label for="post-content">Content</label>
+                <textarea class="form-input" id="post-content" name="post-content"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{#if posts.length}}
+  <div class="col-md-6 post-list">
+    {{#each posts as |post|}}
+    <div class="row mb-2 post" data-post-id="{{post.id}}" data-post-title="{{post.title}}" data-post-content="{{post.content}}">
+      <div class="col-md-8">
+        <h4 class="post-title">{{post.title}}</h4>
+        <p>{{format_date post.date_created}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+{{/if}}
+
+
+<div class="row mt-4" style="display: none;" id="edit-post-section" data-post-id="{{post.id}}">
+    <div class="col-md-6">
+        <form class="form edit-post-form" id="edit-post-form">
+            <h3>Edit Post</h3>
+            <div class="form-group">
+                <label for="edit-post-title">Title</label>
+                <input class="form-input" type="text" id="edit-post-title" name="edit-post-title" />
+            </div>
+            <div class="form-group">
+                <label for="edit-post-content">Content</label>
+                <textarea class="form-input" id="edit-post-content" name="edit-post-content"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="./js/dashboard.js"></script>
