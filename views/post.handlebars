@@ -2,4 +2,26 @@
   <h2>{{title}}</h2>
   <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
+
+  {{#if logged_in}}
+    <!-- Comment Form -->
+    <form id="commentForm">
+      <label for="comment">Comment</label>
+      <textarea name="comment"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+ 
+  <!-- Display Comments -->
+    {{#if comments.length}}
+      <h3>Comments:</h3>
+      <ul>
+        {{#each comments}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    {{/if}}
+
+  {{/if}}
 </div>
+
+{{!-- <script src="./js/comment.js"></script> --}}

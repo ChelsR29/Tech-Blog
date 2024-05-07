@@ -26,6 +26,29 @@ const newFormHandler = async (event) => {
   }
 };
 
+document
+  .querySelector('.new-post-form')
+  .addEventListener('submit', newFormHandler);
+
+// Add click event listener to each post
+document.querySelectorAll('.post').forEach(post => {
+  post.addEventListener('click', () => {
+      // Get the post's data attributes
+      const postTitle = post.getAttribute('data-post-title');
+      const postContent = post.getAttribute('data-post-content');
+
+      // Populate the edit form with the post's data
+      document.getElementById('edit-post-title').value = postTitle;
+      document.getElementById('edit-post-content').value = postContent;
+
+      // Set the post ID to the edit section
+      document.getElementById('edit-post-section').setAttribute('data-post-id', post.getAttribute('data-post-id'));
+
+      // Show the edit form
+      document.getElementById('edit-post-section').style.display = 'block';
+  });
+});
+
 const updateButtonHandler = async (event) => {
   event.preventDefault();
 
@@ -51,7 +74,9 @@ const updateButtonHandler = async (event) => {
 };
 
 // Attach event listener to the update button within the edit form
-document.querySelector('.edit-post-form .update-post-btn').addEventListener('click', updateButtonHandler);
+document
+  .querySelector('.edit-post-form .update-post-btn')
+  .addEventListener('click', updateButtonHandler);
 
 
 const delButtonHandler = async (event) => {
@@ -73,29 +98,7 @@ const delButtonHandler = async (event) => {
 };
 
 // Attach event listener to the delete button within the edit form
-document.getElementById('edit-post-form').addEventListener('click', delButtonHandler);
-
-
 document
-  .querySelector('.new-post-form')
-  .addEventListener('submit', newFormHandler);
+  .getElementById('edit-post-form')
+  .addEventListener('click', delButtonHandler);
 
-
-// Add click event listener to each post
-document.querySelectorAll('.post').forEach(post => {
-  post.addEventListener('click', () => {
-      // Get the post's data attributes
-      const postTitle = post.getAttribute('data-post-title');
-      const postContent = post.getAttribute('data-post-content');
-
-      // Populate the edit form with the post's data
-      document.getElementById('edit-post-title').value = postTitle;
-      document.getElementById('edit-post-content').value = postContent;
-
-      // Set the post ID to the edit section
-      document.getElementById('edit-post-section').setAttribute('data-post-id', post.getAttribute('data-post-id'));
-
-      // Show the edit form
-      document.getElementById('edit-post-section').style.display = 'block';
-  });
-});
