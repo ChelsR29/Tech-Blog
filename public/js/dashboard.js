@@ -51,9 +51,7 @@ const updateButtonHandler = async (event) => {
 };
 
 // Attach event listener to the update button within the edit form
-document.getElementById('edit-post-form').addEventListener('submit', updateButtonHandler);
-
-
+document.querySelector('.edit-post-form .update-post-btn').addEventListener('click', updateButtonHandler);
 
 
 const delButtonHandler = async (event) => {
