@@ -339,3 +339,86 @@ h2 a {
   margin: 10px;
 }
 
+.card {
+  border: 2px solid rgb(29, 23, 23);
+  border-radius: 5px;
+  margin: 20px;
+  background-color: rgb(192, 221, 211);
+}
+
+.card-header {
+  font-size: 18px;
+  margin-top: 0;
+  font-weight: normal;
+  background-color: rgb(29, 23, 23);
+  color: rgb(101, 170, 147);
+  padding: 15px;
+}
+
+.card-body {
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.card-body .form-label {
+  color: rgb(29, 23, 23);
+  margin: 0px;
+}
+
+.card-body .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(29, 23, 23);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.card-body .btn-primary {
+  background-color: rgb(101, 170, 147);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-body .btn-primary:hover {
+  background-color: rgb(75, 128, 110);
+}
+
+.comments-section {
+  border: 2px solid rgb(29, 23, 23);
+  border-radius: 5px;
+  margin: 20px;
+  background-color: rgb(192, 221, 211);
+}
+
+.comments-section h3 {
+  font-size: 18px;
+  margin-top: 0;
+  font-weight: normal;
+  background-color: rgb(29, 23, 23);
+  color: rgb(101, 170, 147);
+  padding: 10px;
+  margin: 0px;
+}
+
+.comment {
+  padding: 10px;
+  padding-top: 10px;
+}
+
+.comment h4 {
+  color: rgb(29, 23, 23);
+  margin: 0px;
+}
+
+.comment p {
+  color: rgb(29, 23, 23);
+  font-style: italic;
+  margin: 10px;
+}
+
+
