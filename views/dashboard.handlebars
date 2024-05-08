@@ -9,7 +9,7 @@
 <div class="row mt-4">
     <div class="col-md-6">
         <form class="form new-post-form" id="new-post-form">
-            <h3>Create a New Post</h3>
+            <h3>Create New Post</h3>
             <div class="form-group">
                 <label for="post-title">Title</label>
                 <input class="form-input" type="text" id="post-title" name="post-title" />
@@ -29,9 +29,11 @@
   <div class="col-md-6 post-list">
     {{#each posts as |post|}}
     <div class="row mb-2 post" data-post-id="{{post.id}}" data-post-title="{{post.title}}" data-post-content="{{post.content}}">
-      <div class="col-md-8">
-        <h4 class="post-title">{{post.title}}</h4>
-        <p>{{format_date post.date_created}}</p>
+      <div class="col-md-12 dash-box">
+        <div class="dash-content">
+          <h4 class="dash-title">{{post.title}}</h4>
+          <p class="dash-date">{{format_date post.date_created}}</p>
+        </div>
       </div>
     </div>
     {{/each}}
