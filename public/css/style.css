@@ -28,6 +28,11 @@ nav a {
   font-family: 'Courier New', Courier, monospace;
 }
 
+.body-background {
+  background-color:rgb(192, 221, 211); 
+}
+
+
 body {
   margin: 0px;
 }
@@ -42,5 +47,79 @@ body {
 
 .new-post-form {
   display: none; /* Initially hide the form */
+}
+
+.post-box {
+  border: 2px solid rgb(29, 23, 23);
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.post-header {
+  margin-bottom: 10px;
+  overflow: hidden;
+  background-color: rgb(29, 23, 23);
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.post-title {
+  font-size: 18px;
+  margin-top: 0;
+  float: left;
+}
+
+h2 a {
+  text-decoration: none;
+  color: rgb(101, 170, 147);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.post-info {
+  font-size: 14px;
+  color: rgb(101, 170, 147);
+
+}
+
+.post-info-right {
+  float: right;
+}
+
+.post-content {
+  clear: both;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.postid-header {
+  margin-bottom: 10px;
+  overflow: hidden;
+  background-color: rgb(29, 23, 23);
+  padding: 10px;
+  padding-bottom: 15px;
+}
+
+.postid-title {
+  font-size: 18px;
+  margin-top: 0;
+  float: left;
+  text-decoration: none;
+  color: rgb(101, 170, 147);
+  margin-bottom: 0px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.postid-info {
+  font-size: 14px;
+  color: rgb(101, 170, 147);
+  margin: 0px;
+
+
+}
+
+.postid-info-right {
+  float: right;
 }
 

@@ -1,7 +1,11 @@
 <div class="text-center">
-    <h2>{{title}}</h2>
-    <p>{{content}}</p>
-    <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    <div class="post-box">
+        <div class="col-md-5 postid-header">
+            <h2 class="postid-title">{{title}}</h2>
+            <p class="col-md-7 postid-info postid-info-right">Created by {{user.name}} on {{format_date date_created}}</p>
+        </div>
+            <p class="post-content">{{content}}</p>
+    </div>
 
     <input type="hidden" id="post-id" name="post-id" value="{{id}}"/>
 
