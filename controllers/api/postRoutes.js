@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -44,11 +44,19 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/:id', withAuth, async (req, res) => {
   try {
-      const post = await Post.findByPk({
-          where: {
-              id: req.params.id,
-              user_id: req.session.user_id,
+      const post = await Post.findByPk(req.params.id, {
+        include:[
+          {
+            model: Comment, include: {
+              model: User,
+              attributes: ['name']
+            }
           },
+          {
+            model: User,
+            attributes: ['id','username']
+          }
+        ]
       });
       if (!post) {
           res.status(404).json({ message: 'No post found with this id!' });
@@ -62,6 +70,7 @@ router.get('/:id', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
+     
     const postData = await Post.destroy({
       where: {
         id: req.params.id,

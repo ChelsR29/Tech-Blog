@@ -7,12 +7,39 @@ router.post('/', withAuth, async (req, res) => {
     const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
-      post_id: req.body.post_id // Assuming you pass post_id in the request body
     });
 
-    res.status(201).json(newComment); // Use 201 for resource creation
+    res.status(200).json({ newComment, success: true });
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try{ 
+    const commentData = await Comment.findAll({});
+    if (commentData.length === 0) {
+      res.status(404).json({ message: "You have no comment."});
+      return;
+    };
+    res.status(200).json(commentData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+      const commentData = await Comment.findAll({
+          where: { id: req.params.id },
+      });
+      if (commentData.length === 0) {
+          res.status(404).json({ message: `The id ${req.params.id} has no comment.` });
+          return;
+      }
+      res.status(200).json(commentData);
+  } catch (err) {
+      res.status(500).json(err);
   }
 });
 
