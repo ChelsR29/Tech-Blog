@@ -33,11 +33,10 @@ const commentFormHandler = async (event) => {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const commentForm = document.querySelector('.comment-form');
-    if (commentForm) {  
-        commentForm.addEventListener('submit', commentFormHandler);
-    }
-});
+document
+    .querySelector('.comment-form')
+    .addEventListener('submit', commentFormHandler);
+
+
 
 
